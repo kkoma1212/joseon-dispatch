@@ -1493,7 +1493,7 @@
       "assets/s2e3-still2.jpg"
     ],
     "youtube": "https://www.youtube.com/watch?v=I0-0PYACZrg",
-    "behindVideo": null,
+    "behindVideo": "https://www.youtube.com/watch?v=SAxJQgvg9w4",
     "title": "전하, 여기는 무인빨래방입니다",
     "duration": "5:25",
     "youtubeTitle": "《조선에 출동했습니다》 시즌2 3편 「전하, 여기는무인 빨래방입니다」| 단편 영화",
@@ -1646,7 +1646,11 @@
       ]
     },
     "guideScript": "assets/s2e3-script.pdf",
-    "progress": null
+    "note": "",
+    "behindVideoNote": null,
+    "progress": null,
+    "behindStory": null,
+    "updatedAt": "2026-10-12T11:25:19.784465+00:00"
   },
   {
     "id": "s2e4",
@@ -1662,7 +1666,7 @@
       "assets/s2e4-still1.jpg",
       "assets/s2e4-still2.jpg"
     ],
-    "youtube": null,
+    "youtube": "https://www.youtube.com/watch?v=we-hOXgfWIM",
     "behindVideo": null,
     "title": "전하, 여기는 헬스장입니다",
     "synopsis": "대사례를 이레 앞두고 활시위를 당기지 못하는 왕. 궁궐에 헬스장이 들어오고, 왕에게도 한 개만 더를 외치는 트레이너와의 일주일이 시작된다.",
@@ -1890,6 +1894,8 @@
         }
       ]
     },
+    "duration": "5:19",
+    "updatedAt": "2026-10-12T11:25:19.784465+00:00",
     "progress": null
   },
   {
@@ -1902,25 +1908,25 @@
     "stills": [],
     "youtube": null,
     "behindVideo": null,
-    "title": "조선에 출동했습니다 5편",
+    "title": "전하, 여기는 놀이공원입니다",
     "scriptPublished": false,
     "behindPublished": true,
     "progress": {
-      "date": "2026-10-11",
-      "text": "오늘(10월 11일) 완성을 목표로 작업하고 있습니다. 시즌 2 · 5편은 10월 14일 수요일쯤 유튜브에 업로드할 예정입니다.",
+      "date": "2026-10-12",
+      "text": "5편을 완성했습니다. 시즌 2 · 5편은 10월 14일 수요일쯤 유튜브에 업로드할 예정입니다.",
       "published": true
     },
-    "synopsis": "",
+    "synopsis": "신하들 잔소리에 지친 왕이 소리를 지르러 궁궐 앞 놀이공원에 간다.",
     "note": null,
-    "updatedAt": "2026-10-11T05:56:03.183196+00:00",
+    "updatedAt": "2026-10-12T11:28:24.397075+00:00",
+    "behindVideoNote": null,
+    "behindStory": null,
     "scriptText": null,
     "scenes": null,
     "productionNote": null,
     "guide": null,
     "guideScript": null,
     "makingOf": null,
-    "revision": null,
-    "behindStory": null,
-    "behindVideoNote": null
+    "revision": null
   }
 ]

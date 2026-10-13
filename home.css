@@ -1,0 +1,148 @@
+/* T-004 첫 화면 · 출동 기록부(개념 A): 현대의 출동 서류 × 조선. 한지 바탕, 굵은 명조 제목, 고정폭 번호, 안전테이프.
+   style.css·archive.css와 같은 페이지에서 쓰므로 모든 규칙을 .dispatch 안에 가두고, 겹치는 이름(hero·btn·brand 등)은 쓰지 않는다.
+   요소 규칙은 :where()로 낮춰 컴포넌트 규칙이 이기게 한다. */
+
+/* 2단계: 아래 구역(처음 오셨나요~시나리오)도 같은 종이·잉크·주홍·명조로 맞춘다. 배치와 내용은 그대로.
+   archive.css의 색 이름을 main 안에서만 바꿔, main 밖의 상세 창(dialog)과 이 파일을 안 쓰는 편집 화면은 그대로 둔다. */
+body.archive{background:#f2ebdd}
+main{--bg:#f2ebdd;--panel:#ebe2d0;--ink:#1c1915;--muted:#6b6255;--line:#cdbfa6;--accent:#962617;--paper:#fbf8f1;--dark:#1c1915;--serif:'Hahmlet','Noto Serif KR',serif;color:var(--ink)}
+/* archive.css의 h1,h2,h3{font-family:var(--sans)}를 main 안에서만 명조로 되돌린다 */
+main :is(h2,h3,h4){font-family:var(--serif)}
+/* archive.css에 색 값이 직접 적힌 아래 구역 바탕·카드(차가운 회색·흰색)를 종이 계열로 */
+main .inside-section{background:var(--panel);border-color:var(--line)}
+main :is(.start-here,.production-updates){background:var(--panel)}
+main :is(.guide-card,.making-card){background:var(--paper);border-color:var(--line);color:var(--ink)}
+
+.dispatch{
+ --paper:#f2ebdd;--sheet:#fbf8f1;--ink:#1c1915;--ink-2:#4b443a;--muted:#6b6255;--rule:#cdbfa6;
+ --vermilion:#b8321f;--vermilion-strong:#962617;--tape:#f2c200;--marker:#f6d64a;
+ --serif:'Hahmlet','Noto Serif KR',serif;--mono:'IBM Plex Mono',ui-monospace,monospace;--sans:'Pretendard','Malgun Gothic',sans-serif;
+ /* 글자 크기는 이 단계만 쓴다. 13px 미만 금지. */
+ --fs-display:clamp(48px,6.4vw,92px);--fs-h2:clamp(26px,3vw,34px);--fs-h3:20px;--fs-body:16px;--fs-small:14px;--fs-meta:13px;
+ --wrap:1160px;--gutter:20px;--line:1.5px solid var(--ink);
+ background:var(--paper);color:var(--ink);font:400 var(--fs-body)/1.65 var(--sans);letter-spacing:-.01em;word-break:keep-all;overflow-wrap:break-word
+}
+@media(min-width:640px){.dispatch{--gutter:32px}}
+.dispatch :where(img){display:block;max-width:100%}
+.dispatch :where(a){color:inherit}
+.dispatch :where(button){margin:0;padding:0;border:0;border-radius:0;background:none;font:inherit;color:inherit;letter-spacing:inherit;text-align:inherit;cursor:pointer}
+.dispatch :where(h1,h2,h3,p){margin:0}
+.dispatch :focus-visible{outline:3px solid var(--vermilion);outline-offset:3px}
+.dispatch .wrap{width:min(100% - var(--gutter)*2,var(--wrap));margin-inline:auto}
+.dispatch .mono{font-family:var(--mono);font-weight:600;letter-spacing:.02em}
+.dispatch mark{padding:0 2px;background:linear-gradient(transparent 58%,var(--marker) 58%);color:inherit}
+
+/* 머리: 서류 양식처럼 두 줄 괘선으로 닫는다 */
+.masthead{display:flex;align-items:center;flex-wrap:wrap;gap:0 28px;padding-block:8px;border-bottom:3px double var(--ink)}
+.masthead-brand{display:inline-flex;align-items:center;gap:10px;min-height:44px;font:800 19px/1 var(--serif);letter-spacing:-.03em;text-decoration:none}
+.masthead-seal{display:grid;place-content:center;width:36px;height:36px;border-radius:3px;background:var(--vermilion);color:#fff;font:700 var(--fs-meta)/1 var(--sans)}
+.dispatch .site-nav{display:flex;flex-wrap:wrap;gap:0 22px;order:3;width:100%}
+.dispatch .site-nav a,.dispatch .youtube{display:inline-flex;align-items:center;min-height:44px;font-size:var(--fs-small);font-weight:600;text-decoration:none}
+.dispatch .site-nav a{color:var(--ink-2)}
+.dispatch .site-nav a:hover{color:var(--vermilion)}
+.dispatch .youtube{margin-left:auto;padding-inline:14px;border:var(--line);border-radius:3px}
+.dispatch .youtube:hover{background:var(--ink);color:var(--paper)}
+
+.dispatch-hero{display:grid;grid-template-areas:"copy" "slip" "actions";gap:24px;padding-block:28px 32px}
+.dispatch-copy{grid-area:copy}
+.kicker{margin:0 0 12px;font-size:var(--fs-meta);font-weight:700;color:var(--vermilion-strong);letter-spacing:.02em}
+.dispatch h1{font:800 var(--fs-display)/1.04 var(--serif);letter-spacing:-.05em;word-break:keep-all}
+.dispatch .lead{margin-top:16px;font:700 20px/1.45 var(--serif);letter-spacing:-.02em}
+/* 쉼표 앞뒤 구절이 가능한 한 각자 한 줄에 남도록 묶는다 */
+.dispatch .lead span{display:inline-block;text-wrap:balance}
+.includes{margin-top:8px;font-size:var(--fs-small);color:var(--ink-2)}
+.dispatched{margin-top:10px;font-size:var(--fs-small);color:var(--ink-2)}
+.dispatched b{margin-right:6px;color:var(--vermilion-strong)}
+.dispatch-actions{grid-area:actions;display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px}
+.cta{display:inline-flex;align-items:center;gap:8px;min-height:52px;padding:0 26px;border-radius:3px;background:var(--vermilion);color:#fff;font-size:var(--fs-body);font-weight:700;text-decoration:none;box-shadow:4px 4px 0 var(--ink)}
+.cta:hover{background:var(--vermilion-strong)}
+.cta:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.arrow-link{display:inline-flex;align-items:center;min-height:44px;font-weight:700;text-decoration:underline;text-underline-offset:5px}
+
+/* 출동 지령서: 대표 편 한 건을 서류 한 장으로 */
+.slip{grid-area:slip;position:relative;background:var(--sheet);border:var(--line);box-shadow:6px 6px 0 var(--rule)}
+.slip-head{display:flex;align-items:center;gap:14px;min-height:44px;padding:0 96px 0 16px;border-bottom:var(--line);font-size:var(--fs-small);font-weight:700}
+.slip-head .mono{color:var(--vermilion-strong)}
+.slip-media{position:relative;aspect-ratio:16/9;background:#000;border-bottom:var(--line)}
+.slip-media iframe{display:block;width:100%;height:100%;border:0}
+.frame{position:relative;display:block;width:100%;height:100%;background:#000;overflow:hidden}
+.frame img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.frame:hover img{transform:scale(1.02)}
+.play{position:absolute;inset:auto auto 16px 16px;display:grid;place-content:center;width:60px;height:60px;padding-left:4px;border:2px solid #fff;border-radius:50%;background:var(--vermilion);color:#fff;font-size:22px;box-shadow:0 6px 20px #0007}
+.frame:hover .play{background:var(--vermilion-strong)}
+.runtime{position:absolute;right:10px;bottom:10px;padding:0 8px;border-radius:2px;background:#000d;color:#fff;font-size:var(--fs-meta)}
+.slip-title{padding:16px 16px 6px;font:800 clamp(22px,2.4vw,28px)/1.3 var(--serif);letter-spacing:-.03em}
+.slip-title button{display:block;width:100%;min-height:44px}
+.slip-title button:hover{text-decoration:underline;text-underline-offset:5px}
+.fields{margin:0;padding:4px 16px 12px}
+.fields div{display:grid;grid-template-columns:68px minmax(0,1fr);align-items:baseline;gap:12px;padding:8px 0;border-top:1px dashed var(--rule)}
+.fields dt{font-size:var(--fs-meta);font-weight:700;color:var(--muted);line-height:1.65}
+.fields dd{margin:0;font-size:var(--fs-small);color:var(--ink-2)}
+.fields dd button{display:inline-flex;align-items:center;min-height:44px;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.fields dd button:hover{color:var(--vermilion)}
+/* 붉은 도장: 서류 오른쪽 위를 비스듬히 누른다 */
+.stamp{position:absolute;top:-16px;right:14px;display:grid;place-content:center;width:68px;height:68px;border:3px solid var(--vermilion);border-radius:6px;box-shadow:inset 0 0 0 3px var(--sheet),inset 0 0 0 4.5px var(--vermilion);background:#fbf8f1e6;color:var(--vermilion);font:800 22px/1 var(--serif);transform:rotate(-9deg);pointer-events:none}
+
+/* 안전테이프: '제작 중'에만 쓴다 */
+.tape{padding-block:14px;background:repeating-linear-gradient(-45deg,var(--tape) 0 14px,var(--ink) 14px 28px)}
+.tape-box{background:var(--ink);color:#f4ecdc}
+.tape-box summary,.tape-line{display:flex;align-items:center;flex-wrap:wrap;gap:4px 12px;min-height:52px;margin:0;padding:0 16px;font-size:var(--fs-small);font-weight:600;cursor:pointer;list-style:none}
+.tape-line{cursor:default}
+.tape-box summary::-webkit-details-marker{display:none}
+.tape-box .mono{color:var(--tape)}
+.tape-more{margin-left:auto;color:var(--tape)}
+.tape-more::after{content:' ▾'}
+.tape-box details[open] .tape-more::after{content:' ▴'}
+.tape-box p{padding:0 16px 14px;font-size:var(--fs-small);color:#d6ccb9}
+.tape-box time{margin-right:6px;font-weight:700;color:#f4ecdc}
+
+/* 출동 기록: 시즌 전환 두 개 + 검색 + 기록 카드 */
+.records{padding-block:36px 64px}
+.records-head{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;margin-bottom:22px;padding-bottom:12px;border-bottom:3px double var(--ink)}
+.records-head h2{margin-right:auto;font:800 var(--fs-h2)/1.6 var(--serif);letter-spacing:-.03em}
+.season-switch{display:flex;gap:8px}
+.season-switch button{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:var(--line);border-radius:3px;background:var(--sheet);font-size:var(--fs-small);font-weight:700}
+.season-switch button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.records-search{width:100%;min-height:44px;padding:0 14px;border:var(--line);border-radius:3px;background:var(--sheet);color:var(--ink);font:500 var(--fs-small)/1 var(--sans)}
+.record-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
+.record{display:flex;flex-direction:column;width:100%;background:var(--sheet);border:var(--line);transition:transform .15s,box-shadow .15s}
+.record:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink)}
+.record-head{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px;padding:0 12px;border-bottom:var(--line);font-size:var(--fs-meta)}
+.status{padding:0 8px;border:1.5px solid var(--vermilion);border-radius:2px;color:var(--vermilion);font-weight:700;transform:rotate(-3deg)}
+.status.is-latest{background:var(--vermilion);color:#fff}
+.status.is-waiting{border-color:var(--muted);color:var(--muted);transform:none}
+.record-media{position:relative;aspect-ratio:16/9;background:#d9cfbd;border-bottom:var(--line)}
+.record-media img{width:100%;height:100%;object-fit:cover}
+.record-body{display:flex;flex-direction:column;flex:1;gap:8px;padding:14px 14px 16px}
+.record h3{font:800 var(--fs-h3)/1.35 var(--serif);letter-spacing:-.03em}
+.reason,.attach{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;font-size:var(--fs-small);color:var(--ink-2)}
+.reason span,.attach span{font-size:var(--fs-meta);font-weight:700;line-height:1.65;color:var(--muted)}
+.attach{margin-top:auto;padding-top:8px;border-top:1px dashed var(--rule)}
+.records-empty{grid-column:1/-1;padding:32px;border:1.5px dashed var(--rule);background:var(--sheet);color:var(--muted)}
+.ask{margin-top:32px}
+.ask a{display:inline-flex;align-items:center;min-height:44px;font-weight:700;text-underline-offset:5px}
+.ask a:hover{color:var(--vermilion)}
+
+/* 바닥글: style.css의 footer 규칙을 되돌린다 */
+footer.dispatch{display:block;max-width:none;margin:0;padding:0;border:0}
+.dispatch .site-footer{display:flex;flex-wrap:wrap;align-items:center;gap:0 24px;padding-block:12px 40px;border-top:3px double var(--ink);font-size:var(--fs-small);color:var(--muted)}
+.dispatch .site-footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink-2)}
+.footer-notes{width:100%;padding-block:8px 4px}
+.dispatch .footer-notes p{font-size:var(--fs-meta);line-height:1.65}
+
+@media(min-width:640px){
+ .record-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .tape-box{display:inline-block;min-width:min(100%,600px)}
+ .records-search{width:auto;min-width:220px}
+}
+@media(min-width:900px){
+ .dispatch .site-nav{order:0;width:auto;margin-left:auto}
+ .dispatch .youtube{margin-left:0}
+}
+@media(min-width:960px){
+ .dispatch-hero{grid-template-columns:5fr 6fr;grid-template-areas:"copy slip" "actions slip";column-gap:64px;row-gap:28px;align-items:end;padding-block:56px 64px}
+ .dispatch-actions{align-self:start}
+ .dispatch .lead{font-size:24px}
+}
+@media(min-width:1100px){.record-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.dispatch *{transition:none!important}}

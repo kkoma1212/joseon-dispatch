@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "characters": [],
+  "ost": [],
+  "interviews": [],
+  "watchOrders": [
+    {
+      "id": "start-to-finish",
+      "title": "처음부터 보기",
+      "summary": "시즌 1부터 시즌 2까지, 편 번호 순서로 봅니다.",
+      "state": "published",
+      "default": true,
+      "episodes": [],
+      "items": [
+        "s1e1",
+        "s1e2",
+        "s1e3",
+        "s1e4",
+        "s1e5",
+        "s1e6",
+        "s1e7",
+        "s1e8",
+        "s1e9",
+        "s1e10",
+        "s2e1",
+        "s2e2",
+        "s2e3",
+        "s2e4",
+        "s2e5"
+      ]
+    }
+  ],
+  "goods": [],
+  "plans": [
+    {
+      "id": "s2e5-release",
+      "title": "시즌 2 5편 공개",
+      "summary": "전하, 여기는 놀이공원입니다",
+      "state": "published",
+      "date": "2026-10-13",
+      "certainty": "confirmed",
+      "scheduleState": "released",
+      "targetKind": "episodes",
+      "targetId": "s2e5",
+      "episodes": []
+    }
+  ],
+  "news": []
+}

@@ -1,0 +1,41 @@
+/* T-005: public episode dialogs share the dispatch paper and ink palette. Studio does not load this file. */
+body.archive dialog{
+ --bg:#f2ebdd;--panel:#ebe2d0;--paper:#fbf8f1;--ink:#1c1915;--dark:#1c1915;
+ --muted:#6b6255;--line:#cdbfa6;--accent:#962617;--serif:'Hahmlet','Noto Serif KR',serif;
+ background:var(--paper);color:var(--ink);border:1.5px solid var(--ink);border-radius:3px;box-shadow:8px 8px 0 #1c191533;
+}
+body.archive dialog::backdrop{background:#1c1915cc;backdrop-filter:blur(5px)}
+body.archive dialog :is(h2,h3,h4,.scene-title){font-family:var(--serif);color:var(--ink)}
+body.archive dialog .detail-header{background:var(--panel);border-bottom:3px double var(--ink)}
+body.archive dialog .detail-poster{object-fit:contain;background:#1c1915}
+body.archive dialog .detail-title{padding-right:60px}
+body.archive dialog .detail-title :is(.eyebrow,.detail-meta){font-family:'IBM Plex Mono','Pretendard',sans-serif;font-size:13px;letter-spacing:0}
+body.archive dialog .dialog-close{width:44px;height:44px;margin-bottom:-56px;background:var(--ink);color:var(--paper);border:1.5px solid var(--ink);border-radius:3px}
+body.archive dialog .detail-tabs{background:var(--paper);border-bottom:1px solid var(--line);gap:22px}
+body.archive dialog .detail-tabs button{font-size:14px;min-height:48px}
+body.archive dialog .detail-tabs button.active{color:var(--accent);border-bottom:3px solid var(--accent);font-weight:700}
+body.archive dialog .detail-tabs .share{font-size:13px}
+body.archive dialog .btn{min-height:44px;border-radius:3px;font-size:14px;border-color:var(--line)}
+body.archive dialog .btn.accent{background:var(--accent);color:var(--paper)}
+body.archive dialog .btn.ghost:hover{background:var(--panel)}
+body.archive dialog .script-reader{background:var(--paper);color:var(--ink);border-color:var(--line);border-radius:3px}
+body.archive dialog .scene-menu{background:var(--panel);border-color:var(--line)}
+body.archive dialog .scene-menu button{color:var(--muted);font-size:13px;min-height:44px}
+body.archive dialog .scene-menu button.active{background:var(--ink);color:var(--paper)}
+body.archive dialog :is(.scene-menu>span,.gallery-label,.video-caption,.next-episode,.next-episode button,.script-actions p,.note-origin,.note-label,.guide-scene,.guide-source,.creator-comment span){font-size:13px!important;letter-spacing:0}
+body.archive dialog :is(.scene-jump,.guide-reader .scene-jump){min-height:44px;font-size:13px;background:var(--panel);border-color:var(--line);color:var(--accent)}
+body.archive dialog :is(.making-script,.creator-comment,.overview-points article,.upcoming-note,.feature-coming){background:var(--panel);color:var(--ink);border-color:var(--line);border-radius:3px}
+body.archive dialog :is(.making-reader section,.behind-story section,.next-episode){border-color:var(--line)}
+body.archive dialog :is(.story-number,.process-step){color:var(--accent)}
+body.archive dialog :is(.making-reader>p,.media-origin,.behind-story figcaption){color:var(--muted)}
+body.archive dialog :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media(max-width:650px){
+ body.archive dialog .detail-title{padding:22px 24px}
+ body.archive dialog .detail-tabs{padding-inline:20px;gap:18px}
+ body.archive dialog .detail-title h2{font-size:25px}
+ body.archive dialog .detail-content{padding:24px 20px}
+ body.archive dialog .scene-text{padding:20px}
+ body.archive dialog .scene-menu button{min-width:120px}
+ body.archive dialog .overview-actions{flex-wrap:wrap}
+ body.archive dialog .video-caption{flex-wrap:wrap;gap:8px}
+}

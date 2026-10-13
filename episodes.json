@@ -18,6 +18,9 @@
     "title": "조선에 출동했습니다 1편",
     "scriptPublished": false,
     "behindPublished": true,
+    "dispatchTarget": "소방차",
+    "dispatchReason": "조선의 화재 현장.",
+    "updatedAt": "2026-10-12T12:10:08.069862+00:00",
     "scriptText": null,
     "scenes": [],
     "progress": null,
@@ -42,6 +45,9 @@
     "title": "조선에 출동했습니다 2편",
     "scriptPublished": false,
     "behindPublished": true,
+    "dispatchTarget": "소방차, 경찰차",
+    "dispatchReason": "성균관 존경각에 큰불.",
+    "updatedAt": "2026-10-12T12:10:08.069862+00:00",
     "scriptText": null,
     "scenes": [],
     "progress": null,
@@ -66,6 +72,9 @@
     "title": "조선에 출동했습니다 3편",
     "scriptPublished": false,
     "behindPublished": true,
+    "dispatchTarget": "소방차, 경찰차",
+    "dispatchReason": "장터의 불과 구휼미 도적.",
+    "updatedAt": "2026-10-12T12:10:08.069862+00:00",
     "scriptText": null,
     "scenes": [],
     "progress": null,
@@ -91,6 +100,9 @@
     "synopsis": "",
     "scriptPublished": false,
     "behindPublished": true,
+    "dispatchTarget": "소방차, 경찰차",
+    "dispatchReason": "큰물이 덮친 한양, 대피 명단에 없는 아이.",
+    "updatedAt": "2026-10-12T12:10:08.069862+00:00",
     "scriptText": null,
     "scenes": [],
     "progress": null,
@@ -262,6 +274,8 @@
       ]
     },
     "guideScript": "assets/s1e5-script.pdf",
+    "dispatchReason": "저잣거리에서 일어난 사고.",
+    "updatedAt": "2026-10-12T12:10:08.069862+00:00",
     "progress": null
   },
   {
@@ -721,6 +735,9 @@
       ]
     },
     "guideScript": "assets/s1e8-script.pdf",
+    "dispatchTarget": "이사팀",
+    "dispatchReason": "어좌·책상·문서함, 딱 세 개만 옮기라는 왕명.",
+    "updatedAt": "2026-10-12T12:10:08.069862+00:00",
     "progress": null
   },
   {
@@ -878,6 +895,9 @@
       ]
     },
     "guideScript": "assets/s1e9-script.pdf",
+    "dispatchTarget": "구급차",
+    "dispatchReason": "명량해전을 앞둔 조선 수군.",
+    "updatedAt": "2026-10-12T12:10:08.069862+00:00",
     "progress": null
   },
   {
@@ -1106,6 +1126,8 @@
       ]
     },
     "behindVideoNote": "기존 AI 장면과 설명 자막으로 구성한 비하인드 영상입니다. 중간에는 장면 12 원본 클립의 소리가 포함됩니다.",
+    "dispatchTarget": "전기 의전차",
+    "updatedAt": "2026-10-12T12:10:08.069862+00:00",
     "progress": null
   },
   {
@@ -1902,31 +1924,53 @@
     "id": "s2e5",
     "season": 2,
     "episode": 5,
-    "status": "production",
-    "thumbnail": null,
+    "status": "complete",
+    "thumbnail": "uploads/0e965cf32346404096b1f9f39a028d95.png",
     "script": null,
-    "stills": [],
-    "youtube": null,
+    "stills": [
+      "uploads/f93234d5771a476ab11a2d2cbf4fe058.jpg",
+      "uploads/0d6e6b261a544b3e9234b0a1deb776aa.jpg",
+      "uploads/c82ebf771851437890b7b1738094e7df.jpg",
+      "uploads/0e4f3ea875314a6ca0dd9884596b1c8d.jpg",
+      "uploads/c4e6d874ef3149daa37dcaf3eba840bc.jpg",
+      "uploads/dc3583d4c57a4b2f856307daa94a6d8f.jpg",
+      "uploads/c0ecc42998f8414fba51b57ac6fd0197.jpg",
+      "uploads/94a0672269714d6aa91fa32cd8760b33.jpg",
+      "uploads/a4e3b74d0617446c8e39acc2c4b52d2a.jpg",
+      "uploads/f03dac1792c54e7e8c50fbd557de64d1.jpg",
+      "uploads/4745165fe9314f5a8aa685d5e833ac1c.jpg",
+      "uploads/e22c83c7784048ddafe5a0a282ea0364.jpg",
+      "uploads/43fe07b4c35b4d1fbc5dec1a3d83eb84.jpg",
+      "uploads/bf698133f2104e64a77c6365bd700a48.jpg",
+      "uploads/f9e8a886c21d4224a0ff236b08b355dc.jpg",
+      "uploads/8353ff2f6fc04bb0ac438dbadb1602da.jpg",
+      "uploads/0d8e4ed98f8c45fbb74db490d5615753.jpg",
+      "uploads/4cdda3aaa1264546b4634f8273062315.jpg",
+      "uploads/56d9792900634a2886c56593092e6f28.jpg",
+      "uploads/cd95e0688db3438d93d3685ff1fbc34a.jpg",
+      "uploads/57aaf74b306f46e5b615581c9544dd41.jpg",
+      "uploads/81326a5973904642a03a044a3671f087.jpg",
+      "uploads/72c4f0cfb28e451991480cd9aa287663.jpg",
+      "uploads/173e86a11ca64541ac5473e341eb7525.jpg"
+    ],
+    "youtube": "https://www.youtube.com/watch?v=rnN3bf8ciXw",
     "behindVideo": null,
     "title": "전하, 여기는 놀이공원입니다",
     "scriptPublished": false,
     "behindPublished": true,
     "progress": {
-      "date": "2026-10-12",
-      "text": "5편을 완성했습니다. 시즌 2 · 5편은 10월 14일 수요일쯤 유튜브에 업로드할 예정입니다.",
+      "date": "2026-10-13",
+      "text": "시즌 2 · 5편을 유튜브에 공개했습니다.",
       "published": true
     },
     "synopsis": "신하들 잔소리에 지친 왕이 소리를 지르러 궁궐 앞 놀이공원에 간다.",
-    "note": null,
-    "updatedAt": "2026-10-12T11:28:24.397075+00:00",
+    "note": "",
+    "updatedAt": "2026-10-13T10:27:50.368755+00:00",
     "behindVideoNote": null,
     "behindStory": null,
     "scriptText": null,
-    "scenes": null,
-    "productionNote": null,
-    "guide": null,
-    "guideScript": null,
-    "makingOf": null,
-    "revision": null
+    "scenes": [],
+    "duration": "3:50",
+    "guideScript": null
   }
 ]

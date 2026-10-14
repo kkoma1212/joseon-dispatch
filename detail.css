@@ -39,3 +39,11 @@ body.archive dialog :focus-visible{outline:3px solid var(--accent);outline-offse
  body.archive dialog .overview-actions{flex-wrap:wrap}
  body.archive dialog .video-caption{flex-wrap:wrap;gap:8px}
 }
+
+/* T-005 final review: tab, reference, comparison and next-episode controls. */
+body.archive dialog .detail-tabs button{min-width:44px}
+body.archive dialog :is(.next-episode button,.text-link){min-height:44px;min-width:44px}
+body.archive dialog :is(.video-caption a,.compare-originals a,.guide-source a,.note-origin a){display:inline-flex;align-items:center;min-height:44px}
+body.archive dialog .story-more>summary{min-height:44px;align-content:center}
+body.archive dialog .compare-control input{min-height:44px}
+body.archive dialog :is(.compare-label,.overview-points span,.guide-reader section p){font-size:13px}

@@ -1,6 +1,111 @@
 {
   "schemaVersion": 1,
-  "characters": [],
+  "characters": [
+    {
+      "id": "s2-king",
+      "title": "왕",
+      "role": "조선의 임금",
+      "summary": "체면은 지키고 싶지만 솔직한 성격. 운동에 점점 재미를 붙인다.",
+      "personality": "체면은 지키고 싶지만 솔직한 성격. 운동에 점점 재미를 붙인다.",
+      "strength": "",
+      "weakness": "",
+      "image": "uploads/5f3108726fd24fddaf75fccc02176109.png",
+      "state": "published",
+      "episodes": [
+        "s2e1",
+        "s2e2",
+        "s2e3",
+        "s2e4",
+        "s2e5"
+      ],
+      "quotes": [
+        {
+          "text": "왕이 관을 벗는 날은 나라가 망하는 날이다.",
+          "episode": "s2e1",
+          "scene": 6,
+          "spoiler": false
+        }
+      ],
+      "photos": []
+    },
+    {
+      "id": "s2-eunuch",
+      "title": "내관",
+      "role": "왕의 곁을 지키는 내관",
+      "summary": "왕을 위해서라면 운동도 대신 하려는 내관. 충성심은 넘치지만, 현대의 규칙 앞에서는 매번 제지당합니다.",
+      "personality": "왕 대신 뭐든 하려다 매번 제지당한다. 한 줄 반응 담당.",
+      "strength": "",
+      "weakness": "",
+      "image": "uploads/fd15182b60784d59b2c1530d1063808a.png",
+      "state": "published",
+      "episodes": [
+        "s2e1",
+        "s2e2",
+        "s2e3",
+        "s2e4",
+        "s2e5"
+      ],
+      "quotes": [
+        {
+          "text": "소신이 곧 전하의 안전모이옵니다.",
+          "episode": "s2e1",
+          "scene": 7,
+          "spoiler": false
+        }
+      ],
+      "photos": []
+    },
+    {
+      "id": "s2-court-lady",
+      "title": "상궁",
+      "role": "수라간·세답방 상궁",
+      "summary": "닭가슴살 식단에 충격받지만 나중엔 누구보다 열심이다.",
+      "personality": "닭가슴살 식단에 충격받지만 나중엔 누구보다 열심이다.",
+      "strength": "",
+      "weakness": "",
+      "image": "uploads/7852ba16096f4c15b7bc5f311771ce0e.png",
+      "state": "published",
+      "episodes": [
+        "s2e1",
+        "s2e2",
+        "s2e3",
+        "s2e4",
+        "s2e5"
+      ],
+      "quotes": [
+        {
+          "text": "닭가슴살 열두 첩 반상이옵니다.",
+          "episode": "s2e4",
+          "scene": 16,
+          "spoiler": false
+        }
+      ],
+      "photos": []
+    },
+    {
+      "id": "trainer",
+      "title": "트레이너",
+      "role": "현대의 트레이너",
+      "summary": "친절하지만 예외가 없다. 왕도 그냥 회원님이다.",
+      "personality": "친절하지만 예외가 없다. 왕도 그냥 회원님이다.",
+      "strength": "",
+      "weakness": "",
+      "image": "uploads/5f76f43ea47f49c9a6b1fec1cd5cb489.png",
+      "state": "published",
+      "episodes": [
+        "s2e4"
+      ],
+      "quotes": [
+        {
+          "text": "대신 하시면 근육도 내관님한테 붙어요.",
+          "episode": "s2e4",
+          "scene": 8,
+          "spoiler": false
+        }
+      ],
+      "photos": []
+    }
+  ],
   "ost": [],
   "interviews": [],
   "watchOrders": [
@@ -30,7 +135,88 @@
       ]
     }
   ],
-  "goods": [],
+  "goods": [
+    {
+      "id": "dispatch-merch-concepts",
+      "title": "한 개만 더 · 아크릴 스탠드",
+      "summary": "익선관은 끝까지 쓴 채, 덤벨 앞에서 부들거리는 왕. 별도 말풍선과 남색 받침으로 운동 장면을 책상 위에 세우는 구상입니다.",
+      "state": "published",
+      "stage": "idea",
+      "prototype": true,
+      "image": "uploads/afc0b7280f4615f1e5466936b0fed823.png",
+      "imageRegion": "top-left",
+      "episodes": [
+        "s2e4"
+      ],
+      "photos": [
+        {
+          "image": "uploads/afc0b7280f4615f1e5466936b0fed823.png",
+          "caption": "익선관은 끝까지 쓴 채, 덤벨 앞에서 부들거리는 왕. 별도 말풍선과 남색 받침으로 운동 장면을 책상 위에 세우는 구상입니다. 실제 제품 사진이 아닌 AI 제작 시안입니다.",
+          "region": "top-left"
+        }
+      ]
+    },
+    {
+      "id": "gym-king-keyring",
+      "title": "한 개만 더 · 말풍선 키링",
+      "summary": "땀 흘리는 왕과 “한 개만 더” 말풍선을 두 개의 참으로 나눴습니다. 표정과 한마디가 함께 흔들리는 키링 구상입니다.",
+      "state": "published",
+      "stage": "idea",
+      "prototype": true,
+      "image": "uploads/afc0b7280f4615f1e5466936b0fed823.png",
+      "imageRegion": "top-right",
+      "episodes": [
+        "s2e4"
+      ],
+      "photos": [
+        {
+          "image": "uploads/afc0b7280f4615f1e5466936b0fed823.png",
+          "caption": "땀 흘리는 왕과 “한 개만 더” 말풍선을 두 개의 참으로 나눴습니다. 표정과 한마디가 함께 흔들리는 키링 구상입니다. 실제 제품 사진이 아닌 AI 제작 시안입니다.",
+          "region": "top-right"
+        }
+      ]
+    },
+    {
+      "id": "royal-training-patch",
+      "title": "왕의 운동 · 자수 패치",
+      "summary": "익선관 아래 두 덤벨과 땀방울. 작은 크기에서도 알아볼 수 있게 형태를 단순화한 자수 패치 구상입니다.",
+      "state": "published",
+      "stage": "idea",
+      "prototype": true,
+      "image": "uploads/afc0b7280f4615f1e5466936b0fed823.png",
+      "imageRegion": "bottom-left",
+      "episodes": [
+        "s2e4"
+      ],
+      "photos": [
+        {
+          "image": "uploads/afc0b7280f4615f1e5466936b0fed823.png",
+          "caption": "익선관 아래 두 덤벨과 땀방울. 작은 크기에서도 알아볼 수 있게 형태를 단순화한 자수 패치 구상입니다. 실제 제품 사진이 아닌 AI 제작 시안입니다.",
+          "region": "bottom-left"
+        }
+      ]
+    },
+    {
+      "id": "growing-king-mug",
+      "title": "과인이 커진 것이다 · 머그컵",
+      "summary": "어깨 솔기가 터진 곤룡포를 입고도 뿌듯한 왕. “과인이 커진 것이다”라는 본편의 한마디를 담은 머그컵 구상입니다.",
+      "state": "published",
+      "stage": "idea",
+      "prototype": true,
+      "image": "uploads/afc0b7280f4615f1e5466936b0fed823.png",
+      "imageRegion": "bottom-right",
+      "episodes": [
+        "s2e4"
+      ],
+      "photos": [
+        {
+          "image": "uploads/afc0b7280f4615f1e5466936b0fed823.png",
+          "caption": "어깨 솔기가 터진 곤룡포를 입고도 뿌듯한 왕. “과인이 커진 것이다”라는 본편의 한마디를 담은 머그컵 구상입니다. 실제 제품 사진이 아닌 AI 제작 시안입니다.",
+          "region": "bottom-right"
+        }
+      ]
+    }
+  ],
   "plans": [
     {
       "id": "s2e5-release",

@@ -17,7 +17,7 @@
   }
   if(goods.length&&$('#home-goods')){
    const first=goods[0],img=safe(first.image),concept=goods.every(i=>i.prototype||i.stage==='idea');
-   $('#home-goods').innerHTML=(img?'<a class="goods-board" href="'+href('goods')+'"><img src="'+esc(img)+'" alt="'+esc(first.title)+' 굿즈 제작 시안" loading="lazy"></a>':'')+'<div class="goods-copy"><p class="section-label">04 / FROM SCREEN TO EVERYDAY</p><span class="goods-note">'+(concept?'제작 시안 · 실제 제작 전':'작품 굿즈')+'</span><h2>'+(concept?'체면은 내려놓고,<br>한 개만 더.':'이야기를 일상 가까이.')+'</h2><p>'+(concept?'익선관을 쓴 채 부들거리는 왕.<br>영상 속 표정과 한마디를 일상에서 만나는 굿즈로 옮겼습니다.':esc(first.summary||''))+'</p><div class="goods-types">'+goods.slice(0,4).map(i=>'<span>'+esc(i.title.split('·').at(-1).trim())+'</span>').join('')+'</div><a class="solid-link" href="'+href('goods')+'">'+(concept?'굿즈 시안 자세히 보기':'굿즈 모두 보기')+' ↗</a></div>';
+   $('#home-goods').innerHTML=(img?'<a class="goods-board" href="'+href('goods')+'"><img src="'+esc(img)+'" alt="'+esc(first.title)+' 굿즈 제작 시안" loading="lazy"></a>':'')+'<div class="goods-copy"><p class="section-label">04 / FROM SCREEN TO EVERYDAY</p><span class="goods-note">'+(concept?'제작 시안 · 실제 제작 전':'작품 굿즈')+'</span><h2>'+(concept?'이야기 속 물건을,<br>일상 가까이.':'이야기를 일상 가까이.')+'</h2><p>'+(concept?'본편에 나온 물건과 세 사람의 색을<br>손에 쥐는 굿즈 시안으로 옮겼습니다.':esc(first.summary||''))+'</p><div class="goods-types">'+goods.slice(0,4).map(i=>'<span>'+esc(i.title.split('·').at(-1).trim())+'</span>').join('')+'</div><a class="solid-link" href="'+href('goods')+'">'+(concept?'굿즈 시안 자세히 보기':'굿즈 모두 보기')+' ↗</a></div>';
    $('#goods-section').hidden=false;
   }
   if(ost.length&&$('#home-soundtrack')){

@@ -49,6 +49,7 @@
 .content-page .goods-detail-head{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;margin-block:24px 40px}
 .content-page .goods-detail-copy h1{font-size:clamp(27px,3vw,42px)}
 .content-page .goods-detail-copy>p{font-size:15px;line-height:1.9;color:var(--site-muted)}
+.content-page .goods-detail-visual{min-width:0}.content-page .goods-detail-visual>img{display:block;width:100%;height:auto}
 .content-page .concept-note{padding:18px 20px;background:#eae4d7;border-left:3px solid var(--site-gold);font-size:13px;margin-top:25px;line-height:1.8}
 .content-page .goods-board-more{border-block:1px solid var(--site-line);padding-block:10px}
 .content-page .goods-board-more>img{max-width:900px;width:100%;display:block;margin:20px auto}

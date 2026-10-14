@@ -137,82 +137,103 @@
   ],
   "goods": [
     {
-      "id": "dispatch-merch-concepts",
-      "title": "한 개만 더 · 아크릴 스탠드",
-      "summary": "익선관은 끝까지 쓴 채, 덤벨 앞에서 부들거리는 왕. 별도 말풍선과 남색 받침으로 운동 장면을 책상 위에 세우는 구상입니다.",
       "state": "published",
       "stage": "idea",
       "prototype": true,
-      "image": "uploads/afc0b7280f4615f1e5466936b0fed823.png",
-      "imageRegion": "top-left",
+      "imageRegion": "full",
+      "id": "samjak-norigae",
+      "title": "세 사람 · 삼작노리개",
       "episodes": [
-        "s2e4"
+        "s2e1",
+        "s2e5"
       ],
+      "summary": "세 사람의 옷 색으로 만든 노리개입니다. 익선관을 쓴 꼬마 왕, 안전모를 받쳐 든 꼬마 내관, 익선관이 떨어진 솜사탕을 든 꼬마 상궁. 하나씩은 가방 고리로 쓰고, 셋을 모으면 1편에서 지은 누각 지붕 고리에 함께 겁니다.",
+      "image": "uploads/dc02c28fd824c1cc48bacef223dcc5ed.png",
       "photos": [
         {
-          "image": "uploads/afc0b7280f4615f1e5466936b0fed823.png",
-          "caption": "익선관은 끝까지 쓴 채, 덤벨 앞에서 부들거리는 왕. 별도 말풍선과 남색 받침으로 운동 장면을 책상 위에 세우는 구상입니다. 실제 제품 사진이 아닌 AI 제작 시안입니다.",
-          "region": "top-left"
+          "image": "uploads/a464d7d87192f66dc5733d3375c981c7.png",
+          "caption": "낱개 노리개 세 점 — 내관 · 왕 · 상궁 (길이 약 15cm)",
+          "region": "full"
+        },
+        {
+          "image": "uploads/6af865903a826da5868b9a6edcbf92d2.png",
+          "caption": "가방 손잡이 고리에 단 꼬마 왕 노리개 — 사용 장면 시안",
+          "region": "full"
+        },
+        {
+          "image": "uploads/55bc35e4a04a363f649beba9665d25b5.png",
+          "caption": "대지째 진열대에 건 모습 — 포장 시안",
+          "region": "full"
         }
       ]
     },
     {
-      "id": "gym-king-keyring",
-      "title": "한 개만 더 · 말풍선 키링",
-      "summary": "땀 흘리는 왕과 “한 개만 더” 말풍선을 두 개의 참으로 나눴습니다. 표정과 한마디가 함께 흔들리는 키링 구상입니다.",
       "state": "published",
       "stage": "idea",
       "prototype": true,
-      "image": "uploads/afc0b7280f4615f1e5466936b0fed823.png",
-      "imageRegion": "top-right",
+      "imageRegion": "full",
+      "id": "pop-box-keyring",
+      "title": "2편 물류센터 · 뽁 택배상자 키링",
       "episodes": [
-        "s2e4"
+        "s2e2"
       ],
+      "summary": "함경도행 큰 상자 틈으로 꼬마 내관이 웃으며 손을 흔듭니다. 앞면 뽁뽁이는 실리콘 팝 버블이라 누르고, 뒤집어서 또 누를 수 있습니다. 뒷면에는 택배 기사의 한마디 “어우, 떡 하나라더니 왜 이렇게 무거워?”",
+      "image": "uploads/881108eca0aa81f212537506e18164d4.png",
       "photos": [
         {
-          "image": "uploads/afc0b7280f4615f1e5466936b0fed823.png",
-          "caption": "땀 흘리는 왕과 “한 개만 더” 말풍선을 두 개의 참으로 나눴습니다. 표정과 한마디가 함께 흔들리는 키링 구상입니다. 실제 제품 사진이 아닌 AI 제작 시안입니다.",
-          "region": "top-right"
+          "image": "uploads/f04ba6fc5cc459a090df19389599f252.png",
+          "caption": "가방 지퍼 고리에 열쇠와 함께 — 사용 장면 시안",
+          "region": "full"
+        },
+        {
+          "image": "uploads/55bc35e4a04a363f649beba9665d25b5.png",
+          "caption": "대지째 진열대에 건 모습 — 포장 시안",
+          "region": "full"
         }
       ]
     },
     {
-      "id": "royal-training-patch",
-      "title": "왕의 운동 · 자수 패치",
-      "summary": "익선관 아래 두 덤벨과 땀방울. 작은 크기에서도 알아볼 수 있게 형태를 단순화한 자수 패치 구상입니다.",
       "state": "published",
       "stage": "idea",
       "prototype": true,
-      "image": "uploads/afc0b7280f4615f1e5466936b0fed823.png",
-      "imageRegion": "bottom-left",
+      "imageRegion": "full",
+      "id": "chicken-bansang-magnets",
+      "title": "4편 헬스장 · 닭가슴살 열두 첩 반상 자석",
       "episodes": [
         "s2e4"
       ],
+      "summary": "꼬마 상궁이 쟁반 위로 얼굴을 내밀고 열두 각 소반을 내밉니다. 반찬 자석 열두 개를 붙여 상을 차리는데, 반찬은 전부 닭가슴살. 상자 속에는 몰래 넣은 약과가 하나 더 들어 있습니다.",
+      "image": "uploads/e038e31b877fff9b0a216ee37b2d7e37.png",
       "photos": [
         {
-          "image": "uploads/afc0b7280f4615f1e5466936b0fed823.png",
-          "caption": "익선관 아래 두 덤벨과 땀방울. 작은 크기에서도 알아볼 수 있게 형태를 단순화한 자수 패치 구상입니다. 실제 제품 사진이 아닌 AI 제작 시안입니다.",
-          "region": "bottom-left"
+          "image": "uploads/789de0320c7fdf722bb3ac088b2cbb2d.png",
+          "caption": "자석 13개 — 반찬 이름은 설명을 위해 지은 이름입니다",
+          "region": "full"
+        },
+        {
+          "image": "uploads/a30ff23958674a91c2f958eb491d048d.png",
+          "caption": "냉장고 문에 붙인 반상과 몰래 붙인 약과 — 사용 장면 시안",
+          "region": "full"
         }
       ]
     },
     {
-      "id": "growing-king-mug",
-      "title": "과인이 커진 것이다 · 머그컵",
-      "summary": "어깨 솔기가 터진 곤룡포를 입고도 뿌듯한 왕. “과인이 커진 것이다”라는 본편의 한마디를 담은 머그컵 구상입니다.",
       "state": "published",
       "stage": "idea",
       "prototype": true,
-      "image": "uploads/afc0b7280f4615f1e5466936b0fed823.png",
-      "imageRegion": "bottom-right",
+      "imageRegion": "full",
+      "id": "laundry-water-globe",
+      "title": "3편 빨래방 · 빨래방 워터볼",
       "episodes": [
-        "s2e4"
+        "s2e3"
       ],
+      "summary": "세탁기의 둥근 창이 워터볼입니다. 흔들면 거품 속에서 팥죽 자국이 남은 곤룡포가 돌고, 받침 위에서는 꼬마 세 사람이 고개를 같이 기울이고 드럼을 구경합니다. 받침 글은 빨래방 사장의 “기계라서 그런 거 몰라요.”",
+      "image": "uploads/9ea175773cb68d7a1cee574e6169a267.png",
       "photos": [
         {
-          "image": "uploads/afc0b7280f4615f1e5466936b0fed823.png",
-          "caption": "어깨 솔기가 터진 곤룡포를 입고도 뿌듯한 왕. “과인이 커진 것이다”라는 본편의 한마디를 담은 머그컵 구상입니다. 실제 제품 사진이 아닌 AI 제작 시안입니다.",
-          "region": "bottom-right"
+          "image": "uploads/83800e62ab9fd415ebc6bcce59a9b4e4.png",
+          "caption": "선반 위 워터볼 — 사용 장면 시안",
+          "region": "full"
         }
       ]
     }

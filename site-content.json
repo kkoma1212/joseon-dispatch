@@ -104,6 +104,124 @@
         }
       ],
       "photos": []
+    },
+    {
+      "id": "site-manager",
+      "title": "현장 소장",
+      "state": "published",
+      "episodes": [
+        "s2e1"
+      ],
+      "summary": "왕이 부른 공사현장에서 작업 규정을 지킵니다. 임금에게도 안전모를 요구합니다.",
+      "quotes": [
+        {
+          "text": "감사합니다. 그래도 안전모는 쓰셔야 합니다.",
+          "episode": "s2e1",
+          "scene": 5,
+          "spoiler": false
+        }
+      ],
+      "photos": [
+        {
+          "image": "uploads/8f04a9ea36da41d896a98d375fe7750b.png",
+          "caption": "공사현장 원본 인물 시트 · 왼쪽 첫 번째가 현장 소장입니다.",
+          "region": "full"
+        }
+      ],
+      "role": "현대 건설 현장의 소장",
+      "image": "uploads/8f04a9ea36da41d896a98d375fe7750b.png"
+    },
+    {
+      "id": "geomancer",
+      "title": "지관",
+      "state": "published",
+      "episodes": [
+        "s2e1"
+      ],
+      "summary": "누각을 지을 자리와 길한 시각을 살피는 풍수 관리입니다.",
+      "quotes": [
+        {
+          "text": "멈추시오! 그 자리는 용의 머리요!",
+          "episode": "s2e1",
+          "scene": 9,
+          "spoiler": false
+        }
+      ],
+      "photos": [
+        {
+          "image": "uploads/99f32f0a6094435c8cfd3dfa6ce6123f.png",
+          "caption": "공사현장 편 조선 인물 시트 · 왼쪽 세 번째, 나경을 든 인물이 지관입니다.",
+          "region": "full"
+        }
+      ],
+      "role": "조선의 지관",
+      "image": "uploads/99f32f0a6094435c8cfd3dfa6ce6123f.png"
+    },
+    {
+      "id": "center-manager",
+      "title": "센터장",
+      "state": "published",
+      "episodes": [
+        "s2e2"
+      ],
+      "summary": "왕이 팔도에 떡을 보내려고 부른 택배팀을 이끕니다.",
+      "quotes": [
+        {
+          "text": "오늘 보내시면 내일 도착해요.",
+          "episode": "s2e2",
+          "scene": 2,
+          "spoiler": false
+        }
+      ],
+      "photos": [
+        {
+          "image": "uploads/72bd6525fffa42df9841bff0441b2b4f.png",
+          "caption": "물류센터 원본 인물 시트 · 왼쪽 첫 번째가 센터장입니다.",
+          "region": "full"
+        }
+      ],
+      "role": "현대 물류센터의 센터장",
+      "image": "uploads/72bd6525fffa42df9841bff0441b2b4f.png"
+    },
+    {
+      "id": "laundry-owner",
+      "title": "빨래방 사장",
+      "state": "published",
+      "episodes": [
+        "s2e3"
+      ],
+      "summary": "왕의 곤룡포 세탁을 돕고, CCTV와 스피커로 빨래방의 규칙을 안내합니다.",
+      "quotes": [
+        {
+          "text": "기계라서 그런 거 몰라요. 40분 걸려요.",
+          "episode": "s2e3",
+          "scene": 11,
+          "spoiler": false
+        }
+      ],
+      "photos": [],
+      "role": "현대 무인빨래방의 사장",
+      "image": "uploads/7538d500f20f47d09e5f4e3be80759a4.png"
+    },
+    {
+      "id": "park-staff",
+      "title": "놀이공원 직원",
+      "state": "published",
+      "episodes": [
+        "s2e5"
+      ],
+      "summary": "놀이공원을 찾은 왕과 내관, 상궁에게 입장권과 놀이기구 이용 규칙을 안내합니다.",
+      "quotes": [
+        {
+          "text": "어서 오세요! 입장권 세 장 드릴까요?",
+          "episode": "s2e5",
+          "scene": 4,
+          "spoiler": false
+        }
+      ],
+      "photos": [],
+      "role": "현대 놀이공원의 직원",
+      "image": "uploads/db4b23deafec4d0a977fd64aeec51374.png"
     }
   ],
   "ost": [],
@@ -252,5 +370,21 @@
       "episodes": []
     }
   ],
-  "news": []
+  "news": [
+    {
+      "id": "s2e5-available",
+      "title": "시즌 2 5편, 놀이공원에 다녀왔습니다",
+      "summary": "왕과 내관, 상궁이 놀이공원에서 겪는 하루를 만나보세요.",
+      "state": "published",
+      "date": "2026-10-15",
+      "pinned": false,
+      "category": "본편 공개",
+      "targetKind": "episodes",
+      "targetId": "s2e5",
+      "episodes": [
+        "s2e5"
+      ],
+      "body": "《조선에 출동했습니다》 시즌 2의 다섯 번째 이야기, 「전하, 여기는 놀이공원입니다」를 보실 수 있습니다.\n\n신하들의 잔소리에 지친 왕은 내관, 상궁과 함께 궁궐 앞 놀이공원으로 향합니다. 롤러코스터 앞에서도 왕명이 통할까요?\n\n본편을 보고, 시즌 1부터 이어지는 다른 출동 기록도 함께 만나보세요."
+    }
+  ]
 }

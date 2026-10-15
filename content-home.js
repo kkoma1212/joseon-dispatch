@@ -5,7 +5,8 @@
  const safe=v=>typeof v==='string'&&/^(assets|uploads)\/[A-Za-z0-9_.-]+$/.test(v)?v:'';
  const href=(kind,id)=>'content.html?type='+encodeURIComponent(kind)+(id?'&id='+encodeURIComponent(id):'');
  const portraits=new Set(['5f3108726fd24fddaf75fccc02176109.png','fd15182b60784d59b2c1530d1063808a.png','7852ba16096f4c15b7bc5f311771ce0e.png','5f76f43ea47f49c9a6b1fec1cd5cb489.png']);
- function portrait(i){const p=safe(i.image);return p?'<div class="'+(portraits.has(p.split("/").pop())?'portrait-sheet'+(i.id==='trainer'?' is-trainer':''):'cast-photo')+'"><img src="'+esc(p)+'" alt="'+esc(i.title)+'" loading="lazy"></div>':'';}
+ const portraitCrops=new Map([["8f04a9ea36da41d896a98d375fe7750b.png","site-manager"],["99f32f0a6094435c8cfd3dfa6ce6123f.png","geomancer"],["72bd6525fffa42df9841bff0441b2b4f.png","center-manager"],["7538d500f20f47d09e5f4e3be80759a4.png","laundry-owner"],["db4b23deafec4d0a977fd64aeec51374.png","park-staff"]]);
+ function portrait(i){const p=safe(i.image),file=p.split('/').pop(),crop=portraitCrops.get(file);return p?'<div class="'+(crop||portraits.has(file)?'portrait-sheet'+(crop?' is-'+crop:i.id==='trainer'?' is-trainer':''):'cast-photo')+'"><img src="'+esc(p)+'" alt="'+esc(i.title)+'" loading="lazy"></div>':'';}
  async function read(){const paths=(location.hostname||'').endsWith('.github.io')?['site-content.json']:['api/site-content','site-content.json'];for(const path of paths){const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),5000);try{const r=await fetch(path,{signal:controller.signal});if(!r.ok)continue;const d=await r.json();if(d.schemaVersion===1)return d;}catch{}finally{clearTimeout(timer)}}throw Error('콘텐츠를 불러오지 못했습니다.');}
  try{
   const data=await read(),visible=k=>(data[k]||[]).filter(i=>i.state==='published');

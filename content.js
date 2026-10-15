@@ -12,13 +12,16 @@ const episode=id=>episodes.find(e=>e.id===id),playable=e=>e?.status==='complete'
 const epLink=id=>'./?episode='+encodeURIComponent(id)+'&view=watch';
 function picture(path,alt){path=safeMedia(path);return path?'<img src="'+esc(path)+'" alt="'+esc(alt)+'" loading="lazy">':'';}
 const portraitPaths=new Set(['5f3108726fd24fddaf75fccc02176109.png','fd15182b60784d59b2c1530d1063808a.png','7852ba16096f4c15b7bc5f311771ce0e.png','5f76f43ea47f49c9a6b1fec1cd5cb489.png']);
-function portrait(item){return portraitPaths.has(String(item.image).split("/").pop())?'<div class="portrait-sheet'+(item.id==='trainer'?' is-trainer':'')+'">'+picture(item.image,item.title)+'</div>':picture(item.image,item.title);}
+const portraitCrops=new Map([["8f04a9ea36da41d896a98d375fe7750b.png","site-manager"],["99f32f0a6094435c8cfd3dfa6ce6123f.png","geomancer"],["72bd6525fffa42df9841bff0441b2b4f.png","center-manager"],["7538d500f20f47d09e5f4e3be80759a4.png","laundry-owner"],["db4b23deafec4d0a977fd64aeec51374.png","park-staff"]]);
+function portrait(item){const file=String(item.image).split('/').pop(),crop=portraitCrops.get(file);return crop||portraitPaths.has(file)?'<div class="portrait-sheet'+(crop?' is-'+crop:item.id==='trainer'?' is-trainer':'')+'">'+picture(item.image,item.title)+'</div>':picture(item.image,item.title);}
 const introductions={characters:'왕과 내관, 그리고 현대의 규칙을 지키는 사람들. 익숙한 얼굴의 또 다른 이야기를 만나보세요.',goods:'본편에 나온 물건을 일상 가까이. 아직 실제 제작 전인 굿즈 시안입니다.',ost:'작품의 분위기를 음악으로 만나보세요.',interviews:'만드는 사람과 작품 속 인물에게 묻습니다.',watchOrders:'시즌 1부터 차례대로, 또는 마음에 드는 이야기부터. 나에게 맞는 감상 순서를 찾아보세요.',plans:'본편과 작품 콘텐츠의 공개 기록입니다.',news:'새로운 이야기와 만드는 동안의 소식을 전합니다.'};
 function card(kind,item){const label=item.state==='teaser'?'공개 예고':kind==='characters'?item.role||'작품 속 인물':kind==='goods'?(item.prototype?'제작 시안 · 실제 제작 전':labels[item.stage]||'굿즈'):kind==='interviews'?(item.interviewKind==='character'?'인물 가상 인터뷰':'제작자 인터뷰'):labels[item.state]||'';const visual=kind==='characters'?portrait(item):photo(item.image,item.title,item.imageRegion);return '<article class="card">'+(visual?'<a class="card-visual" href="'+link(kind,item.id)+'" aria-label="'+esc(item.title)+' 자세히 보기">'+visual+'</a>':'')+'<span class="tag">'+esc(label)+'</span><h2><a href="'+link(kind,item.id)+'">'+esc(item.title)+'</a></h2>'+(item.summary?'<p>'+esc(item.summary)+'</p>':'')+'</article>';}
 function epList(ids,orderId){return '<div class="grid">'+ids.map(episode).filter(Boolean).map(e=>'<article class="card">'+picture(e.thumbnail,e.title)+'<small>시즌 '+e.season+' · '+e.episode+'편</small><h3>'+esc(e.title)+'</h3>'+(playable(e)?'<a class="button" href="'+(epLink(e.id)+(orderId?'&order='+encodeURIComponent(orderId):''))+'">본편 보기</a>':'<span class="tag">공개 준비 중</span>')+'</article>').join('')+'</div>';}
 function field(label,value){return value?'<dt>'+label+'</dt><dd>'+esc(value)+'</dd>':'';}
 function renderDetail(kind,item){
  document.title=item.title+' · 조선에 출동했습니다';
+ const photos=[...(item.photos||[])];
+ if(kind==='characters'&&portraitCrops.has(String(item.image).split('/').pop())&&!photos.some(p=>p.image===item.image))photos.unshift({image:item.image,caption:item.title+' 원본 인물 시트',region:'full'});
  let body='<span class="tag">'+esc(labels[item.state])+'</span><h1>'+esc(item.title)+'</h1>'+(item.summary?'<p>'+esc(item.summary)+'</p>':'');
  if(item.state==='teaser'){root.innerHTML='<a class="button" href="'+link(kind)+'">← '+names[kind]+'</a><article class="detail">'+body+'<p>내용을 준비하고 있습니다.</p></article>';return;}
  if(kind==='characters'){
@@ -45,7 +48,7 @@ function renderDetail(kind,item){
  if(kind==='plans')body+='<p>'+esc(item.date||'날짜 미정')+' · '+esc(labels[item.certainty])+' · '+esc(labels[item.scheduleState])+'</p>';
  if(kind==='news')body+='<p>'+esc(item.date)+'</p><p class="body">'+esc(item.body)+'</p>';
  if(item.targetKind&&item.targetId)body+='<a class="button" href="'+(item.targetKind==='episodes'?epLink(item.targetId):link(item.targetKind,item.targetId))+'">관련 콘텐츠 보기</a>';
- if(item.photos?.length&&kind!=='goods')body+='<h2>'+(kind==='goods'?'제작 시안 살펴보기':'사진')+'</h2><div class="photos">'+item.photos.map(p=>'<figure>'+photo(p.image,p.caption||item.title,p.region)+'<figcaption>'+esc(p.caption)+(safeMedia(p.image)?'<br><a href="'+esc(p.image)+'" target="_blank" rel="noopener">원본 이미지 크게 보기 ↗</a>':'')+'</figcaption></figure>').join('')+'</div>';
+ if(photos.length&&kind!=='goods')body+='<h2>사진</h2><div class="photos">'+photos.map(p=>'<figure>'+photo(p.image,p.caption||item.title,p.region)+'<figcaption>'+esc(p.caption)+(safeMedia(p.image)?'<br><a href="'+esc(p.image)+'" target="_blank" rel="noopener">원본 이미지 크게 보기 ↗</a>':'')+'</figcaption></figure>').join('')+'</div>';
  if(item.episodes?.length&&kind!=='watchOrders')body+='<h2>등장·관련 본편</h2>'+epList(item.episodes);
  root.innerHTML='<p><a class="button" href="'+link(kind)+'">← '+names[kind]+'</a></p><article class="detail">'+body+'</article>';
 }

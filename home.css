@@ -88,6 +88,12 @@ body.home-page .site-header,body.content-page .site-header{max-width:none;margin
 .portrait-sheet{position:relative;overflow:hidden;aspect-ratio:9/13;background:#e5dad6;border-radius:3px}
 .portrait-sheet img{position:absolute;width:500%;max-width:none;left:-400%;top:-20%;height:auto;display:block}
 .portrait-sheet.is-trainer img{width:568.889%;left:-468.889%;top:-15.3846%}
+/* Focus the published supporting cast on their own portrait within each original sheet. */
+.portrait-sheet.is-site-manager img{width:688%;left:-56.25%;top:-15.5769%}
+.portrait-sheet.is-geomancer img{width:688%;left:-255%;top:-22.5%}
+.portrait-sheet.is-center-manager img{width:640%;left:-125.5814%;top:-24.9553%}
+.portrait-sheet.is-laundry-owner img{width:283.7113%;left:-164.9485%;top:-1.4274%}
+.portrait-sheet.is-park-staff img{width:458.6667%;left:-355%;top:-5.7692%}
 .cast-card .cast-role{display:block;margin-top:16px;font-size:13px;color:var(--site-muted)}
 .home-page .cast-card h3{font-size:24px;margin:3px 0 8px;display:flex;align-items:center;justify-content:space-between}
 .cast-card h3 span{font:400 19px var(--site-sans)}

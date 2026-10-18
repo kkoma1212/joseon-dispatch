@@ -3,6 +3,7 @@
  const $=s=>document.querySelector(s);
  const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const safe=v=>typeof v==='string'&&/^(assets|uploads)\/[A-Za-z0-9_.-]+$/.test(v)?v:'';
+ const youtubeURL=v=>typeof v==='string'&&/^https:\/\/www\.youtube\.com\/watch\?v=[A-Za-z0-9_-]{11}$/.test(v)?v:'';
  const href=(kind,id)=>'content.html?type='+encodeURIComponent(kind)+(id?'&id='+encodeURIComponent(id):'');
  const portraits=new Set(['5f3108726fd24fddaf75fccc02176109.png','fd15182b60784d59b2c1530d1063808a.png','7852ba16096f4c15b7bc5f311771ce0e.png','5f76f43ea47f49c9a6b1fec1cd5cb489.png']);
  const portraitCrops=new Map([["8f04a9ea36da41d896a98d375fe7750b.png","site-manager"],["99f32f0a6094435c8cfd3dfa6ce6123f.png","geomancer"],["72bd6525fffa42df9841bff0441b2b4f.png","center-manager"],["7538d500f20f47d09e5f4e3be80759a4.png","laundry-owner"],["db4b23deafec4d0a977fd64aeec51374.png","park-staff"]]);
@@ -25,6 +26,12 @@
    const i=ost[0],audio=safe(i.audio);
    $('#home-soundtrack').innerHTML='<div class="soundtrack-feature"><div class="soundtrack-cover"><span>ORIGINAL SOUNDTRACK</span><strong>'+esc(i.title)+'</strong><span>악동꼬마</span></div><div><p class="section-label">THE SOUND OF JOSEON</p><h2>이야기에 음악을 더하면.</h2><p>'+esc(i.summary||i.title)+'</p>'+(audio?'<audio controls preload="none" src="'+esc(audio)+'" aria-label="'+esc(i.title)+' 재생"></audio>':'')+'<p><a class="editorial-link" href="'+href('ost',i.id)+'">OST 자세히 듣기 ↗</a></p></div></div>';
    $('#soundtrack-section').hidden=false;
+  }
+  const upcoming=visible('plans').filter(i=>i.scheduleState==='planned').sort((a,b)=>(a.date||'9999').localeCompare(b.date||'9999'))[0];
+  if(upcoming&&$('#home-release')){
+   const destination=href('plans',upcoming.id),img=safe(upcoming.image),video=youtubeURL(upcoming.youtube);
+   $('#home-release').innerHTML=(img?'<a class="release-picture" href="'+destination+'" aria-label="'+esc(upcoming.title)+' 공개 일정"><img src="'+esc(img)+'" alt="'+esc(upcoming.title)+' 썸네일" width="1280" height="720" loading="lazy"></a>':'')+'<div class="release-copy"><p class="section-label">다음 출동 · 공개 예정</p><h2 id="release-title">'+esc(upcoming.title)+'</h2><p>'+esc(upcoming.summary||'공개 일정을 확인해 주세요.')+'</p><div class="release-links"><a class="editorial-link" href="'+destination+'">공개 일정 보기 ↗</a>'+(video?'<a class="editorial-link" href="'+esc(video)+'" target="_blank" rel="noopener">유튜브 영상 페이지 ↗</a>':'')+'</div></div>';
+   $('#release-section').hidden=false;
   }
   const journal=[...visible('news').map(i=>({...i,kind:'news'})),...visible('plans').map(i=>({...i,kind:'plans'}))].sort((a,b)=>(b.date||'').localeCompare(a.date||'')).slice(0,3);
   if(journal.length&&$('#home-journal')){

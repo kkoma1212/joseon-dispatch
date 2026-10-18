@@ -188,3 +188,14 @@ body.home-page .site-header,body.content-page .site-header{max-width:none;margin
  .home-page .records{padding-top:16px}
  .home-page .records .section-heading{margin-bottom:12px}
 }
+
+
+/* Upcoming releases remain separate from published episode playback. */
+.release-band{padding:24px 0;background:#efe6cf;border-bottom:1px solid var(--site-line)}
+.release-notice{display:grid;grid-template-columns:minmax(180px,260px) minmax(0,1fr);gap:28px;align-items:center}
+.release-picture{display:block;line-height:0}.release-picture img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}
+.release-copy:only-child{grid-column:1/-1}.release-copy .section-label{margin:0 0 6px;color:var(--site-red)}
+.home-page .release-copy h2{margin:0;font-size:25px;line-height:1.4}.release-copy>p:not(.section-label){margin:8px 0;font-size:14px;line-height:1.8;color:var(--site-muted)}
+.release-copy .editorial-link{display:inline-flex;align-items:center;min-height:44px;font-size:14px}
+.release-links{display:flex;flex-wrap:wrap;gap:4px 24px}
+@media(max-width:640px){.release-band{padding:20px 0}.release-notice{grid-template-columns:1fr;gap:16px}.home-page .release-copy h2{font-size:23px}}

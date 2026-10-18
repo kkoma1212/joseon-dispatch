@@ -23,7 +23,7 @@
   }
   if(ost.length&&$('#home-soundtrack')){
    const i=ost[0],audio=safe(i.audio);
-   $('#home-soundtrack').innerHTML='<div class="soundtrack-feature"><div class="soundtrack-cover"><span>ORIGINAL SOUNDTRACK</span><strong>'+esc(i.title)+'</strong><span>악동꼬마</span></div><div><p class="section-label">THE SOUND OF JOSEON</p><h2>이야기에 음악을 더하면.</h2><p>'+esc(i.summary||i.title)+'</p>'+(audio?'<audio controls preload="none" src="'+esc(audio)+'" aria-label="'+esc(i.title)+' 재생"></audio>':'')+'<p><a class="editorial-link" href="'+href('ost',i.id)+'">곡 이야기 보기 ↗</a></p></div></div>';
+   $('#home-soundtrack').innerHTML='<div class="soundtrack-feature"><div class="soundtrack-cover"><span>ORIGINAL SOUNDTRACK</span><strong>'+esc(i.title)+'</strong><span>악동꼬마</span></div><div><p class="section-label">THE SOUND OF JOSEON</p><h2>이야기에 음악을 더하면.</h2><p>'+esc(i.summary||i.title)+'</p>'+(audio?'<audio controls preload="none" src="'+esc(audio)+'" aria-label="'+esc(i.title)+' 재생"></audio>':'')+'<p><a class="editorial-link" href="'+href('ost',i.id)+'">OST 자세히 듣기 ↗</a></p></div></div>';
    $('#soundtrack-section').hidden=false;
   }
   const journal=[...visible('news').map(i=>({...i,kind:'news'})),...visible('plans').map(i=>({...i,kind:'plans'}))].sort((a,b)=>(b.date||'').localeCompare(a.date||'')).slice(0,3);

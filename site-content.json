@@ -224,7 +224,19 @@
       "image": "uploads/db4b23deafec4d0a977fd64aeec51374.png"
     }
   ],
-  "ost": [],
+  "ost": [
+    {
+      "id": "joseon-dispatch",
+      "title": "조선에 출동했습니다",
+      "state": "published",
+      "audio": "uploads/0662dff2b6da4bec8f005dfaf7e2ffd3.mp3",
+      "duration": 91.224,
+      "summary": "《조선에 출동했습니다》의 오리지널 사운드트랙을 감상해 보세요.",
+      "credits": "",
+      "lyrics": "",
+      "episodes": []
+    }
+  ],
   "interviews": [],
   "watchOrders": [
     {
@@ -249,7 +261,11 @@
         "s2e2",
         "s2e3",
         "s2e4",
-        "s2e5"
+        "s2e5",
+        "s2e6",
+        "s2e7",
+        "s2e8",
+        "s2e9"
       ]
     }
   ],

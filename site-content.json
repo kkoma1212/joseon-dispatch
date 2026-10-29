@@ -242,7 +242,7 @@
     {
       "id": "start-to-finish",
       "title": "처음부터 보기",
-      "summary": "시즌 1부터 시즌 2까지, 편 번호 순서로 봅니다.",
+      "summary": "시즌 1부터 시즌 3까지, 편 번호 순서로 봅니다.",
       "state": "published",
       "default": true,
       "episodes": [],
@@ -266,7 +266,11 @@
         "s2e7",
         "s2e8",
         "s2e9",
-        "s2e10"
+        "s2e10",
+        "s3e1",
+        "s3e2",
+        "s3e3",
+        "s3e4"
       ]
     }
   ],
@@ -399,6 +403,39 @@
       "youtube": "https://www.youtube.com/watch?v=yN0cpkHFCVg",
       "targetKind": "episodes",
       "targetId": "s2e10"
+    },
+    {
+      "id": "s3e5-release",
+      "title": "시즌 3 5편 · PC방 편 공개 예정",
+      "summary": "「전하, 여기는 PC방입니다」가 11월 1일(일)에 공개됩니다.",
+      "state": "published",
+      "image": "assets/s3e5-thumb.png",
+      "episodes": [],
+      "date": "2026-11-01",
+      "certainty": "confirmed",
+      "scheduleState": "planned"
+    },
+    {
+      "id": "s3e6-release",
+      "title": "시즌 3 6편 · 미용실 편 공개 예정",
+      "summary": "「전하, 여기는 미용실입니다」가 11월 3일(화)에 공개됩니다.",
+      "state": "published",
+      "image": "assets/s3e6-thumb.png",
+      "episodes": [],
+      "date": "2026-11-03",
+      "certainty": "confirmed",
+      "scheduleState": "planned"
+    },
+    {
+      "id": "s3e7-release",
+      "title": "시즌 3 7편 · 방탈출 카페 편 공개 예정",
+      "summary": "「전하, 여기는 방탈출 카페입니다」가 11월 5일(목)에 공개됩니다.",
+      "state": "published",
+      "image": "assets/s3e7-thumb.png",
+      "episodes": [],
+      "date": "2026-11-05",
+      "certainty": "confirmed",
+      "scheduleState": "planned"
     }
   ],
   "news": [

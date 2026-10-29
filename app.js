@@ -1,6 +1,6 @@
 'use strict';
 const $=s=>document.querySelector(s), channel='https://youtube.com/channel/UCaeHgxvmvaR_f2cloP2kAng';
-let episodes=[],season=2,selected=null,view='watch',scene=0,watchSequence=null;
+let episodes=[],season=3,selected=null,view='watch',scene=0,watchSequence=null;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const title=e=>e.title||'조선에 출동했습니다 '+e.episode+'편';
 const code=e=>'시즌 '+e.season+' · '+e.episode+'편';

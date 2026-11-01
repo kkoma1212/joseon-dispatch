@@ -270,7 +270,8 @@
         "s3e1",
         "s3e2",
         "s3e3",
-        "s3e4"
+        "s3e4",
+        "s3e5"
       ]
     }
   ],
@@ -406,14 +407,16 @@
     },
     {
       "id": "s3e5-release",
-      "title": "시즌 3 5편 · PC방 편 공개 예정",
-      "summary": "「전하, 여기는 PC방입니다」가 11월 1일(일)에 공개됩니다.",
+      "title": "시즌 3 5편 공개",
+      "summary": "전하, 여기는 PC방입니다",
       "state": "published",
       "image": "assets/s3e5-thumb.png",
       "episodes": [],
       "date": "2026-11-01",
       "certainty": "confirmed",
-      "scheduleState": "planned"
+      "scheduleState": "released",
+      "targetKind": "episodes",
+      "targetId": "s3e5"
     },
     {
       "id": "s3e6-release",

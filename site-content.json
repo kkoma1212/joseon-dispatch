@@ -442,6 +442,39 @@
       "date": "2026-11-05",
       "certainty": "confirmed",
       "scheduleState": "planned"
+    },
+    {
+      "id": "s3e8-release",
+      "title": "시즌 3 8편 · 건강검진센터 편 공개 예정",
+      "summary": "「전하, 여기는 건강검진센터입니다」가 11월 7일(토)에 공개됩니다.",
+      "state": "published",
+      "image": "assets/s3e8-thumb.png",
+      "episodes": [],
+      "date": "2026-11-07",
+      "certainty": "confirmed",
+      "scheduleState": "planned"
+    },
+    {
+      "id": "s3e9-release",
+      "title": "시즌 3 9편 · 휴대폰 매장 편 공개 예정",
+      "summary": "「전하, 여기는 휴대폰 매장입니다」가 11월 9일(월)에 공개됩니다.",
+      "state": "published",
+      "image": "assets/s3e9-thumb.png",
+      "episodes": [],
+      "date": "2026-11-09",
+      "certainty": "confirmed",
+      "scheduleState": "planned"
+    },
+    {
+      "id": "s3e10-release",
+      "title": "시즌 3 10편 · 수능 시험장 편 공개 예정",
+      "summary": "「전하, 여기는 수능 시험장입니다」가 11월 11일(수)에 공개됩니다.",
+      "state": "published",
+      "image": "assets/s3e10-thumb.png",
+      "episodes": [],
+      "date": "2026-11-11",
+      "certainty": "confirmed",
+      "scheduleState": "planned"
     }
   ],
   "news": [

@@ -271,7 +271,8 @@
         "s3e2",
         "s3e3",
         "s3e4",
-        "s3e5"
+        "s3e5",
+        "s3e6"
       ]
     }
   ],
@@ -420,14 +421,16 @@
     },
     {
       "id": "s3e6-release",
-      "title": "시즌 3 6편 · 미용실 편 공개 예정",
-      "summary": "「전하, 여기는 미용실입니다」가 11월 3일(화)에 공개됩니다.",
+      "title": "시즌 3 6편 공개",
+      "summary": "전하, 여기는 미용실입니다",
       "state": "published",
       "image": "assets/s3e6-thumb.png",
       "episodes": [],
       "date": "2026-11-03",
       "certainty": "confirmed",
-      "scheduleState": "planned"
+      "scheduleState": "released",
+      "targetKind": "episodes",
+      "targetId": "s3e6"
     },
     {
       "id": "s3e7-release",

@@ -272,7 +272,8 @@
         "s3e3",
         "s3e4",
         "s3e5",
-        "s3e6"
+        "s3e6",
+        "s3e7"
       ]
     }
   ],
@@ -434,14 +435,16 @@
     },
     {
       "id": "s3e7-release",
-      "title": "시즌 3 7편 · 방탈출 카페 편 공개 예정",
-      "summary": "「전하, 여기는 방탈출 카페입니다」가 11월 5일(목)에 공개됩니다.",
+      "title": "시즌 3 7편 공개",
+      "summary": "전하, 여기는 방탈출 카페입니다",
       "state": "published",
       "image": "assets/s3e7-thumb.png",
       "episodes": [],
       "date": "2026-11-05",
       "certainty": "confirmed",
-      "scheduleState": "planned"
+      "scheduleState": "released",
+      "targetKind": "episodes",
+      "targetId": "s3e7"
     },
     {
       "id": "s3e8-release",

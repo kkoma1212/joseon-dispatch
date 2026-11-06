@@ -273,7 +273,8 @@
         "s3e4",
         "s3e5",
         "s3e6",
-        "s3e7"
+        "s3e7",
+        "s3e8"
       ]
     }
   ],
@@ -448,14 +449,16 @@
     },
     {
       "id": "s3e8-release",
-      "title": "시즌 3 8편 · 건강검진센터 편 공개 예정",
-      "summary": "「전하, 여기는 건강검진센터입니다」가 11월 7일(토)에 공개됩니다.",
+      "title": "시즌 3 8편 공개",
+      "summary": "전하, 여기는 건강검진센터입니다",
       "state": "published",
       "image": "assets/s3e8-thumb.png",
       "episodes": [],
       "date": "2026-11-07",
       "certainty": "confirmed",
-      "scheduleState": "planned"
+      "scheduleState": "released",
+      "targetKind": "episodes",
+      "targetId": "s3e8"
     },
     {
       "id": "s3e9-release",

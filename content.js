@@ -10,6 +10,9 @@ const photoRegions=new Set(['full','top-left','top-right','bottom-left','bottom-
 function photo(path,alt,region){const image=picture(path,alt);return region&&region!=='full'&&photoRegions.has(region)?'<div class="photo-crop crop-'+region+'">'+image+'</div>':image;}
 const safeURL=v=>{try{const u=new URL(v);return u.protocol==='https:'&&!u.username?u.href:'';}catch{return '';}};
 const link=(kind,id)=>'content.html?type='+encodeURIComponent(kind)+(id?'&id='+encodeURIComponent(id):'')+(preview?'&preview=1':'');
+// 예약 공개(T-096, 2026-11-07): 공개 시각(시간대 포함) 전에는 그 편을 '공개 준비 중'으로, 지나면 공개 예정 안내를 '공개 완료' 문구로 — 건윤님이 자리 비운 동안 사람 손 없이 바뀌게. 시각을 못 읽으면 공개 전으로 본다.
+const notYet=at=>!(Date.parse(at)<=Date.now());
+const due=p=>p.release&&!notYet(p.release.at)?{...p,title:p.release.title,summary:p.release.summary,scheduleState:'released'}:p;
 const episode=id=>episodes.find(e=>e.id===id),playable=e=>e?.status==='complete'&&safeURL(e.youtube);
 const epLink=id=>'./?episode='+encodeURIComponent(id)+'&view=watch';
 function picture(path,alt){path=safeMedia(path);return path?'<img src="'+esc(path)+'" alt="'+esc(alt)+'" loading="lazy">':'';}
@@ -32,10 +35,11 @@ function renderDetail(kind,item){
   const interviews=data.interviews.filter(i=>i.character===item.id);if(interviews.length)body+='<h2>이 인물의 인터뷰</h2><div class="grid">'+interviews.map(i=>card('interviews',i)).join('')+'</div>';
  }
  if(kind==='ost'){
-  if(item.image)body+=picture(item.image,item.title);else body+='<div class="ost-art" role="img" aria-label="'+esc(item.title)+' 제목 기반 임시 표지"><span class="ost-art-kicker">악동꼬마 · 작품 OST</span><strong>'+esc(item.title)+'</strong><span class="ost-art-seal" aria-hidden="true">出動</span><span class="ost-art-line" aria-hidden="true"></span><small>제목 기반 임시 표지</small></div>';
+  // 뮤직비디오가 있으면 표지 자리에 둔다 — 표지와 MV 첫 화면이 같은 그림이라 위아래로 두 번 보이지 않게(11-21 후보본 화면 확인).
+  if(youtubeURL(item.youtube))body+='<iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/'+youtubeURL(item.youtube).slice(-11)+'" title="'+esc(item.title)+' 뮤직비디오" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe><p><a href="'+esc(youtubeURL(item.youtube))+'" target="_blank" rel="noopener">유튜브에서 뮤직비디오 보기 ↗</a></p>';
+  else if(item.image)body+=picture(item.image,item.title);else body+='<div class="ost-art" role="img" aria-label="'+esc(item.title)+' 제목 기반 임시 표지"><span class="ost-art-kicker">악동꼬마 · 작품 OST</span><strong>'+esc(item.title)+'</strong><span class="ost-art-seal" aria-hidden="true">出動</span><span class="ost-art-line" aria-hidden="true"></span><small>제목 기반 임시 표지</small></div>';
   if(safeMedia(item.audio))body+='<audio controls preload="none" src="'+esc(item.audio)+'" aria-label="'+esc(item.title)+' 재생"></audio>';
-  if(item.duration)body+='<p>재생시간 '+Math.floor(item.duration/60)+':'+String(Math.floor(item.duration%60)).padStart(2,'0')+'</p>';
-  if(item.credits)body+='<h2>제작 크레딧</h2><p class="body">'+esc(item.credits)+'</p>';
+  if(item.duration)body+='<p>재생시간 '+Math.floor(item.duration/60)+':'+String(Math.floor(item.duration%60)).padStart(2,'0')+'</p>';  if(item.credits)body+='<h2>제작 크레딧</h2><p class="body">'+esc(item.credits)+'</p>';
   if(item.lyrics)body+='<details><summary>가사 보기</summary><p class="body">'+esc(item.lyrics)+'</p></details>';
  }
  if(kind==='interviews'){
@@ -70,6 +74,9 @@ function renderHome(){
 async function loadJSON(api,fallback){if(!preview&&(location.hostname||'').endsWith('.github.io')){const r=await fetch(fallback);if(!r.ok)throw Error('자료를 불러오지 못했습니다.');return r.json();}try{const r=await fetch(api,{headers:preview?{'X-Archive-Client':'studio-v2'}:{}});if(!r.ok)throw Error();return await r.json();}catch(e){if(preview)throw Error('제작자 서버를 새 버전으로 실행한 뒤 미리 보기를 열어 주세요.');const r=await fetch(fallback);if(!r.ok)throw Error('자료를 불러오지 못했습니다.');return r.json();}}
 (async()=>{try{
  [data,episodes]=await Promise.all([loadJSON(preview?'/api/content-preview':'api/site-content','site-content.json'),loadJSON('api/episodes','episodes.json')]);
+ const waiting=new Set(episodes.filter(e=>e.publishAt&&notYet(e.publishAt)).map(e=>e.id));
+ episodes=episodes.map(e=>waiting.has(e.id)?{...e,youtube:null}:e);data.plans=(data.plans||[]).map(due);
+ (data.watchOrders||[]).forEach(o=>{o.items=(o.items||[]).filter(id=>!waiting.has(id))});
  if(!data||data.schemaVersion!==1||!Array.isArray(episodes))throw Error('자료 형식을 확인해 주세요.');
  for(const k of Object.keys(names))if(!Array.isArray(data[k]))throw Error('자료 형식을 확인해 주세요.');
  document.querySelectorAll('nav [data-kind]').forEach(a=>{a.hidden=!data[a.dataset.kind]?.length;if(a.dataset.kind===qs.get('type'))a.setAttribute('aria-current','page');});

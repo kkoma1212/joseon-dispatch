@@ -4,13 +4,15 @@
  const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const safe=v=>typeof v==='string'&&/^(assets|uploads)\/[A-Za-z0-9_.-]+$/.test(v)?v:'';
  const youtubeURL=v=>typeof v==='string'&&/^https:\/\/www\.youtube\.com\/watch\?v=[A-Za-z0-9_-]{11}$/.test(v)?v:'';
+ // 예약 공개(T-096, 2026-11-07): 공개 시각(시간대 포함) 전에는 그 편을 '공개 준비 중'으로, 지나면 공개 예정 안내를 '공개 완료' 문구로 — 건윤님이 자리 비운 동안 사람 손 없이 바뀌게. 시각을 못 읽으면 공개 전으로 본다.
+ const due=p=>p.release&&Date.parse(p.release.at)<=Date.now()?{...p,title:p.release.title,summary:p.release.summary,scheduleState:'released'}:p;
  const href=(kind,id)=>'content.html?type='+encodeURIComponent(kind)+(id?'&id='+encodeURIComponent(id):'');
  const portraits=new Set(['5f3108726fd24fddaf75fccc02176109.png','fd15182b60784d59b2c1530d1063808a.png','7852ba16096f4c15b7bc5f311771ce0e.png','5f76f43ea47f49c9a6b1fec1cd5cb489.png']);
  const portraitCrops=new Map([["8f04a9ea36da41d896a98d375fe7750b.png","site-manager"],["99f32f0a6094435c8cfd3dfa6ce6123f.png","geomancer"],["72bd6525fffa42df9841bff0441b2b4f.png","center-manager"],["7538d500f20f47d09e5f4e3be80759a4.png","laundry-owner"],["db4b23deafec4d0a977fd64aeec51374.png","park-staff"]]);
  function portrait(i){const p=safe(i.image),file=p.split('/').pop(),crop=portraitCrops.get(file);return p?'<div class="'+(crop||portraits.has(file)?'portrait-sheet'+(crop?' is-'+crop:i.id==='trainer'?' is-trainer':''):'cast-photo')+'"><img src="'+esc(p)+'" alt="'+esc(i.title)+'" loading="lazy"></div>':'';}
  async function read(){const paths=(location.hostname||'').endsWith('.github.io')?['site-content.json']:['api/site-content','site-content.json'];for(const path of paths){const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),5000);try{const r=await fetch(path,{signal:controller.signal});if(!r.ok)continue;const d=await r.json();if(d.schemaVersion===1)return d;}catch{}finally{clearTimeout(timer)}}throw Error('콘텐츠를 불러오지 못했습니다.');}
  try{
-  const data=await read(),visible=k=>(data[k]||[]).filter(i=>i.state==='published');
+  const data=await read(),visible=k=>(data[k]||[]).filter(i=>i.state==='published');data.plans=(data.plans||[]).map(due);
   const characters=visible('characters'),goods=visible('goods'),ost=visible('ost');
   document.querySelectorAll('[data-content-nav]').forEach(a=>{a.hidden=!visible(a.dataset.contentNav).length;});
   if(characters.length&&$('#home-characters')){

@@ -235,6 +235,19 @@
       "credits": "",
       "lyrics": "",
       "episodes": []
+    },
+    {
+      "id": "ask-again",
+      "title": "또 물어봤어 (Ask Again)",
+      "state": "published",
+      "image": "uploads/2fd8ed4561f8d676e64b30cb2a010334.png",
+      "audio": "uploads/94b07c96b023d446ae78862069281a88.mp3",
+      "duration": 156.384,
+      "summary": "육백 년 전 조선에서 온 전하가 처음 보는 세상 앞에서 \"여기 어디야?\" 하고 묻던 날들을 노래로 담았습니다. 세탁기 앞에서, 치과 의자 위에서, 지하철 문 앞에서 옆에서 하나씩 알려 준 모든 분들께 드리는 노래입니다.",
+      "credits": "작사: 악동꼬마\n음악 제작: Suno AI\n영상: 조선에 출동했습니다 본편 장면 편집\n제작: 악동꼬마",
+      "lyrics": "여기 어디야? 어디야?\n\n육백 년 전 조선에서 왔거든\n세탁기는 왜 혼자 빙빙 돌아\n치과 의자는 왜 뒤로 넘어가\n지하철은 왜 나 빼고 출발해\n\n물어볼 때마다 넌 웃으면서\n하나부터 열까지 알려 줬잖아\n\n여기 어디야, 어디야\n조선엔 이런 데 없었어\n여기 어디야, 어디야\n너랑 오니까 다 재밌어\n\n한 군데 더, 한 군데 더\n이번엔 또 어디 갈까\n아직 못 본 게 많잖아\n또 가자, 너랑 또 가자\n\n인형은 왜 잡으면 또 떨어져\n김장날은 왜 해도 해도 안 끝나\n놀이공원은 왜 줄만 서 있어\n근데 이제 지하철은 혼자 타\n\n물어볼 게 하나씩 줄어드니까\n괜히 아는 것도 또 물어봤어\n\n여기 어디야, 어디야\n조선엔 이런 데 없었어\n여기 어디야, 어디야\n너랑 오니까 다 재밌어\n\n한 군데 더, 한 군데 더\n이번엔 또 어디 갈까\n아직 못 본 게 많잖아\n또 가자, 너랑 또 가자\n\n지하철은 이제 안 무서운데\n너랑 헤어지는 건 좀 무서워\n다 배웠는데 왜 눈물이 나\n이건 너도 안 알려 줬잖아\n\n여기 어디야, 어디야\n어디든 너랑 가고 싶어\n여기 어디야, 어디야\n오늘은 혼자 타기 싫어\n\n한 군데 더, 같이 가 줘\n한 군데 더, 같이 있자\n아직 못 본 게 많잖아\n또 가자, 우리 또 출동\n\n다음엔 내가 알려 줄게\n조선엔 이런 데 없었어",
+      "youtube": "https://www.youtube.com/watch?v=FsEovpMdIoQ",
+      "episodes": []
     }
   ],
   "interviews": [],
@@ -242,7 +255,7 @@
     {
       "id": "start-to-finish",
       "title": "처음부터 보기",
-      "summary": "시즌 1부터 시즌 3까지, 편 번호 순서로 봅니다.",
+      "summary": "시즌 1부터 시즌 4까지, 편 번호 순서로 봅니다.",
       "state": "published",
       "default": true,
       "episodes": [],
@@ -274,7 +287,12 @@
         "s3e5",
         "s3e6",
         "s3e7",
-        "s3e8"
+        "s3e8",
+        "s3e9",
+        "s3e10",
+        "s4e1",
+        "s4e2",
+        "s4e3"
       ]
     }
   ],
@@ -462,25 +480,29 @@
     },
     {
       "id": "s3e9-release",
-      "title": "시즌 3 9편 · 휴대폰 매장 편 공개 예정",
-      "summary": "「전하, 여기는 휴대폰 매장입니다」가 11월 9일(월)에 공개됩니다.",
+      "title": "시즌 3 9편 공개",
+      "summary": "전하, 여기는 휴대폰 매장입니다",
       "state": "published",
       "image": "assets/s3e9-thumb.png",
       "episodes": [],
       "date": "2026-11-09",
       "certainty": "confirmed",
-      "scheduleState": "planned"
+      "scheduleState": "released",
+      "targetKind": "episodes",
+      "targetId": "s3e9"
     },
     {
       "id": "s3e10-release",
-      "title": "시즌 3 10편 · 수능 시험장 편 공개 예정",
-      "summary": "「전하, 여기는 수능 시험장입니다」가 11월 11일(수)에 공개됩니다.",
+      "title": "시즌 3 10편 공개",
+      "summary": "전하, 여기는 수능 시험장입니다",
       "state": "published",
       "image": "assets/s3e10-thumb.png",
       "episodes": [],
       "date": "2026-11-11",
       "certainty": "confirmed",
-      "scheduleState": "planned"
+      "scheduleState": "released",
+      "targetKind": "episodes",
+      "targetId": "s3e10"
     }
   ],
   "news": [
